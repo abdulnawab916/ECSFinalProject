@@ -1,4 +1,4 @@
-# ECSFinalProject
+# ECS 171 - Machine Learning -  Heart Prediction Model
 Final project repo for ECS 171 Machine Learning Class.
 
 **V0.1** - got the starter app set up with a "basicheart.csv", which is a reduced dataset.
