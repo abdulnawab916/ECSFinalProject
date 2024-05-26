@@ -2,6 +2,7 @@
 Final project repo for ECS 171 Machine Learning Class.
 
 **V0.1** - got the starter app set up with a "basicheart.csv", which is a reduced dataset.
+
 **V1.0** 
 - Refined starter app, uses the full dataset "heart.csv"
 - Only uses logistic model for prediction
