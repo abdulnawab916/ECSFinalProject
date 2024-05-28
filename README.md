@@ -26,9 +26,6 @@ Final project repo for ECS 171 Machine Learning Class.
 - If you're changing the dataset, Make sure to rerun ``python logisticmodel.py`` in the ``flask`` folder to create a new "logistic_regression_model.pkl" file.
 
 ## NOTES
-- We need to do more EDA.
-    - The report should include our EDA where we discussed about the Logistic Regression and the Bagged Decision Tree.
-    - Basically, we found that the Logistic Regression was more inaccurate than the Bagged Decision Tree, which shows our data is more non linear. The Bagged Decision Tree had an accuracy of 98.54% compared to Logistic Regression accuracy, where it was 79.51%.
 - Color theory -- We need to make the UI of the landing page for the website better, so it's more related to our "Heart Disease" theme.
 - Make the dropdowns better. We need to not use the default HTML format? 
 

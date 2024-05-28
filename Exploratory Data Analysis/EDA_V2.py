@@ -8,7 +8,7 @@ import joblib
 import matplotlib.pyplot as plt
 
 # Load the dataset
-df = pd.read_csv('heart.csv')
+df = pd.read_csv('Exploratory Data Analysis/heart.csv')
 
 # Define the features and the target
 features = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
@@ -30,7 +30,7 @@ logistic_accuracy = accuracy_score(y_test, y_pred_logistic)
 print(f'Logistic Regression Accuracy: {logistic_accuracy}')
 
 # Save the Logistic Regression model
-joblib.dump(logistic_model, 'logistic_regression_model.pkl')
+joblib.dump(logistic_model, 'Exploratory Data Analysis\\logistic_regression_model.pkl')
 
 # Train Bagged Decision Tree Model
 bagging_model = BaggingClassifier(DecisionTreeClassifier(), n_estimators=50, random_state=42)
