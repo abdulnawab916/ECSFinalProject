@@ -4,11 +4,9 @@ import joblib
 
 app = Flask(__name__)
 
-# Load the dataset
-df = pd.read_csv('heart.csv')
 
 # Load the trained model
-model = joblib.load('logistic_regression_model.pkl')
+model = joblib.load('../Exploratory Data Analysis/bagged_decision_tree_model.pkl')
 
 @app.route('/')
 def index():
@@ -17,6 +15,7 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.form.to_dict()
+    print(data)
     features = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
     
     # Convert input data to a dataframe

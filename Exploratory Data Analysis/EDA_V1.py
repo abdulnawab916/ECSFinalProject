@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 # Load the dataset
-df = pd.read_csv('heart.csv')
+df = pd.read_csv('Exploratory Data Analysis/heart.csv')
 
 # Define the features and the target
 features = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
@@ -37,7 +37,7 @@ bagging_accuracy = accuracy_score(y_test, y_pred_bagging)
 print(f'Bagged Decision Tree Accuracy: {bagging_accuracy}')
 
 # Save the model
-joblib.dump(bagging_model, 'bagged_decision_tree_model.pkl')
+joblib.dump(bagging_model, 'Exploratory Data Analysis\\bagged_decision_tree_model.pkl')
 
 
 # RANDOM FOREST
@@ -55,14 +55,11 @@ rf_accuracy = accuracy_score(y_test, y_pred_rf)
 print(f'Random Forest Accuracy: {rf_accuracy}')
 
 # Save the model
-joblib.dump(random_forest_model, 'random_forest_model.pkl')
+joblib.dump(random_forest_model, 'Exploratory Data Analysis\\random_forest_model.pkl')
 
 
 # COMPARE THE MODELS
 # =============================================
-
-# Load the dataset
-df = pd.read_csv('heart.csv')
 
 # Define the features and the target
 features = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
