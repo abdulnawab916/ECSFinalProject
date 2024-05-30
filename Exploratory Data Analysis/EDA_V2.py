@@ -3,9 +3,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import BaggingClassifier
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, confusion_matrix
 import joblib
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Load the dataset
 df = pd.read_csv('heart.csv')
@@ -61,4 +62,25 @@ plt.bar(models, accuracies, color=['blue', 'green'])
 plt.ylim([0, 1])
 plt.ylabel('Accuracy')
 plt.title('Model Accuracy Comparison')
+plt.show()
+
+# Labels for confusion matrices
+labels = ['Does Not Have Heart Disease', 'Has Heart Disease']
+
+# Plot confusion matrix for Logistic Regression
+logistic_confusion_matrix = confusion_matrix(y_test, y_pred_logistic)
+plt.figure(figsize=(10, 6))
+sns.heatmap(logistic_confusion_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=labels, yticklabels=labels)
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix - Logistic Regression')
+plt.show()
+
+# Plot confusion matrix for Bagged Descision Tree
+bagged_confusion_matrix = confusion_matrix(y_test, y_pred_bagging)
+plt.figure(figsize=(10, 6))
+sns.heatmap(bagged_confusion_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=labels, yticklabels=labels)
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix - Bagged Decision Tree')
 plt.show()
