@@ -115,7 +115,7 @@
       }
       @keyframes flash {
         0%, 100% { background-color: #f9f9f9; color: #333; }
-        50% { background-color: #ffeb3b; color: #000; }
+        50% { background-color: #808080; color: #000; }
       }
       @media (min-width: 768px) {
         pre {
@@ -134,7 +134,7 @@
         <form id="predictionForm">
           <label for="age">1. Age (years):</label>
           <span class="description">(age)</span>
-          <input type="number" id="age" name="age" placeholder="EX: 57" required />
+          <input type="number" id="age" name="age" placeholder="EX: 54" required />
 
           <label for="sex">2. Sex:</label>
           <span class="description">(sex)</span>
@@ -154,11 +154,11 @@
 
           <label for="trestbps">4. Resting Blood Pressure (in mm Hg):</label>
           <span class="description">(trestbps)</span>
-          <input type="number" id="trestbps" name="trestbps" placeholder="EX: 140" required />
+          <input type="number" id="trestbps" name="trestbps" placeholder="EX: 132" required />
 
           <label for="chol">5. Serum Cholesterol (in mg/dL):</label>
           <span class="description">(chol)</span>
-          <input type="number" id="chol" name="chol" placeholder="EX: 240" required />
+          <input type="number" id="chol" name="chol" placeholder="EX: 246" required />
 
           <label for="fbs">6. Fasting Blood Sugar > 120 mg/dL:</label>
           <span class="description">(fbs) 1 = true; 0 = false</span>
@@ -177,7 +177,7 @@
 
           <label for="thalach">8. Maximum Heart Rate Achieved:</label>
           <span class="description">(thalach)</span>
-          <input type="number" id="thalach" name="thalach" placeholder="EX: 150" required />
+          <input type="number" id="thalach" name="thalach" placeholder="EX: 149" required />
 
           <label for="exang">9. Exercise Induced Angina:</label>
           <span class="description">(exang) 1 = yes; 0 = no</span>
@@ -188,7 +188,7 @@
 
           <label for="oldpeak">10. ST Depression Induced by Exercise Relative to Rest:</label>
           <span class="description">(oldpeak)</span>
-          <input type="number" id="oldpeak" name="oldpeak" step="0.1" placeholder="EX: 1.5" required />
+          <input type="number" id="oldpeak" name="oldpeak" step="0.1" placeholder="EX: 1.1" required />
 
           <label for="slope">11. The Slope of the Peak Exercise ST Segment:</label>
           <span class="description">(slope)</span>
@@ -205,14 +205,6 @@
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-          </select>
-
-          <label for="thal">13. Thalassemia:</label>
-          <span class="description">(thal) 0 = Normal; 1 = Fixed Defect; 2 = Reversible Defect</span>
-          <select id="thal" name="thal" required>
-            <option value="0">0 = Normal</option>
-            <option value="1">1 = Fixed Defect</option>
-            <option value="2">2 = Reversible Defect</option>
           </select>
 
           <button type="button" onclick="submitForm()">Submit</button>
@@ -235,7 +227,7 @@
             if (Object.keys(data).length === 0) {
               resultElement.textContent = "No prediction available";
             } else {
-              const predictionText = JSON.stringify(data, null, 2);;
+              const predictionText = JSON.stringify(data, null, 2);
               const resultText = `Prediction: ${predictionText}\n\n0 = Healthy Heart\n1 = Heart Disease`;
               resultElement.textContent = resultText;
             }
