@@ -105,8 +105,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #b5b5b5;
-        font-size: 14px;
+        color: #333;
+        font-size: 16px;
+        white-space: pre-wrap; /* Ensure text wraps properly */
+        transition: background-color 0.5s, color 0.5s;
+      }
+      .flash {
+        animation: flash 1s linear;
+      }
+      @keyframes flash {
+        0%, 100% { background-color: #f9f9f9; color: #333; }
+        50% { background-color: #ffeb3b; color: #000; }
       }
       @media (min-width: 768px) {
         pre {
@@ -125,7 +134,7 @@
         <form id="predictionForm">
           <label for="age">1. Age (years):</label>
           <span class="description">(age)</span>
-          <input type="number" id="age" name="age" required />
+          <input type="number" id="age" name="age" placeholder="EX: 57" required />
 
           <label for="sex">2. Sex:</label>
           <span class="description">(sex)</span>
@@ -137,19 +146,19 @@
           <label for="cp">3. Chest Pain Type:</label>
           <span class="description">(cp)</span>
           <select id="cp" name="cp" required>
-            <option value="0">0 = Asymptomatic</option>
+            <option value="0">0 = Typical Angina</option>
             <option value="1">1 = Atypical Angina</option>
             <option value="2">2 = Non-Anginal Pain</option>
-            <option value="3">3 = Typical Angina</option>
+            <option value="3">3 = Asymptomatic</option>
           </select>
 
           <label for="trestbps">4. Resting Blood Pressure (in mm Hg):</label>
           <span class="description">(trestbps)</span>
-          <input type="number" id="trestbps" name="trestbps" required />
+          <input type="number" id="trestbps" name="trestbps" placeholder="EX: 140" required />
 
           <label for="chol">5. Serum Cholesterol (in mg/dL):</label>
           <span class="description">(chol)</span>
-          <input type="number" id="chol" name="chol" required />
+          <input type="number" id="chol" name="chol" placeholder="EX: 240" required />
 
           <label for="fbs">6. Fasting Blood Sugar > 120 mg/dL:</label>
           <span class="description">(fbs) 1 = true; 0 = false</span>
@@ -168,7 +177,7 @@
 
           <label for="thalach">8. Maximum Heart Rate Achieved:</label>
           <span class="description">(thalach)</span>
-          <input type="number" id="thalach" name="thalach" required />
+          <input type="number" id="thalach" name="thalach" placeholder="EX: 150" required />
 
           <label for="exang">9. Exercise Induced Angina:</label>
           <span class="description">(exang) 1 = yes; 0 = no</span>
@@ -179,7 +188,7 @@
 
           <label for="oldpeak">10. ST Depression Induced by Exercise Relative to Rest:</label>
           <span class="description">(oldpeak)</span>
-          <input type="number" id="oldpeak" name="oldpeak" step="0.1" required />
+          <input type="number" id="oldpeak" name="oldpeak" step="0.1" placeholder="EX: 1.5" required />
 
           <label for="slope">11. The Slope of the Peak Exercise ST Segment:</label>
           <span class="description">(slope)</span>
@@ -226,10 +235,15 @@
             if (Object.keys(data).length === 0) {
               resultElement.textContent = "No prediction available";
             } else {
-              resultElement.textContent = JSON.stringify(data, null, 2);
+              const predictionText = JSON.stringify(data, null, 2);;
+              const resultText = `Prediction: ${predictionText}\n\n0 = Healthy Heart\n1 = Heart Disease`;
+              resultElement.textContent = resultText;
             }
             resultElement.style.color = "#333";
             resultElement.style.fontSize = "16px";
+            resultElement.style.whiteSpace = "pre-wrap"; // Ensure text wraps properly
+            resultElement.classList.add('flash'); // Add flash class for animation
+            setTimeout(() => resultElement.classList.remove('flash'), 1000); // Remove flash class after animation
           });
       }
     </script>
