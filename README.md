@@ -1,7 +1,8 @@
 # ECS 171 - Machine Learning -  Heart Disease Prediction Model
 Final project repo for ECS 171 Machine Learning Class.
 
-**V0.1** - got the starter app set up with a "basicheart.csv", which is a reduced dataset.
+**V0.1** 
+- got the starter app set up with a "basicheart.csv", which is a reduced dataset.
 
 **V1.0** 
 - Refined starter app, uses the full dataset "heart.csv"
@@ -12,9 +13,14 @@ Final project repo for ECS 171 Machine Learning Class.
 - Made starter app better
 - Did more EDA
 
+**V2** 
+- FIXED OUR DATASET
+    - inverted target with 0 to 1
+- FIXED EDA
+- FIXED EVERYTHING
+
 ## Exploring Data Analysis
-``EDA_V1.py`` - Compares Bagged Decision Tree vs Random Forest
-``EDA_V2.py`` - Compares Bagged Decision Tree vs Logistic Regression
+``EDA.ipynv`` - Compares bagged decision tree, and logistic regression
 
 ## HOW TO RUN THE APP:
 1) Open the ``flask`` folder in terminal.
@@ -23,15 +29,6 @@ Final project repo for ECS 171 Machine Learning Class.
 - It should look something like this: ``http://127.0.0.1:5000/``
 
 ## MAKING CHANGES TO DATASET:
-- If you're changing the dataset, Make sure to rerun ``python logisticmodel.py`` in the ``flask`` folder to create a new "logistic_regression_model.pkl" file.
+- If you're changing the model, Make sure to rerun ``python models.py`` in the ``Exploratory Data Analysis`` folder to create a new "bagged_decision_tree_model.pkl" file.
 
-## NOTES
-- Color theory -- We need to make the UI of the landing page for the website better, so it's more related to our "Heart Disease" theme.
-- Make the dropdowns better. We need to not use the default HTML format? 
-
-
-- We also found out that Bagged Decision Trees vs Random Forest have the same accuracy:
-Bagged Decision Tree Accuracy: 0.9853658536585366
-Random Forest Accuracy: 0.9853658536585366
-Bagged Decision Tree Cross-Validation Accuracy: 0.9970731707317073
-Random Forest Cross-Validation Accuracy: 0.9970731707317073
+**ALL NEW INFORMATION NOW IN ``EDA.ipynb``**
