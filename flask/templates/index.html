@@ -61,8 +61,15 @@
         }
       }
       label {
-        margin-top: 10px;
+        margin-top: 20px;
         color: #333;
+        font-weight: bold;
+      }
+      .description {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 10px;
+        display: block;
       }
       input,
       select {
@@ -70,6 +77,7 @@
         margin-top: 5px;
         border: 1px solid #ccc;
         border-radius: 4px;
+        font-size: 14px;
       }
       button {
         margin-top: 20px;
@@ -115,81 +123,87 @@
       </div>
       <div class="form-container">
         <form id="predictionForm">
-          <label for="age">Age:</label>
+          <label for="age">1. Age (years):</label>
+          <span class="description">(age)</span>
           <input type="number" id="age" name="age" required />
 
-          <label for="sex">Sex:</label>
+          <label for="sex">2. Sex:</label>
+          <span class="description">(sex)</span>
           <select id="sex" name="sex" required>
-            <option value="1">Male</option>
-            <option value="0">Female</option>
+            <option value="1">1 = Male</option>
+            <option value="0">0 = Female</option>
           </select>
 
-          <label for="cp">Chest Pain Type:</label>
+          <label for="cp">3. Chest Pain Type:</label>
+          <span class="description">(cp)</span>
           <select id="cp" name="cp" required>
-            <option value="0">Typical Angina</option>
-            <option value="1">Atypical Angina</option>
-            <option value="2">Non-Anginal Pain</option>
-            <option value="3">Asymptomatic</option>
+            <option value="0">0 = Asymptomatic</option>
+            <option value="1">1 = Atypical Angina</option>
+            <option value="2">2 = Non-Anginal Pain</option>
+            <option value="3">3 = Typical Angina</option>
           </select>
 
-          <label for="trestbps">Resting Blood Pressure (in mm Hg):</label>
+          <label for="trestbps">4. Resting Blood Pressure (in mm Hg):</label>
+          <span class="description">(trestbps)</span>
           <input type="number" id="trestbps" name="trestbps" required />
 
-          <label for="chol">Serum Cholesterol (in mg/dL):</label>
+          <label for="chol">5. Serum Cholesterol (in mg/dL):</label>
+          <span class="description">(chol)</span>
           <input type="number" id="chol" name="chol" required />
 
-          <label for="fbs">Fasting Blood Sugar > 120 mg/dL:</label>
+          <label for="fbs">6. Fasting Blood Sugar > 120 mg/dL:</label>
+          <span class="description">(fbs) 1 = true; 0 = false</span>
           <select id="fbs" name="fbs" required>
-            <option value="1">True</option>
-            <option value="0">False</option>
+            <option value="1">1 = True</option>
+            <option value="0">0 = False</option>
           </select>
 
-          <label for="restecg">Resting Electrocardiographic Results:</label>
+          <label for="restecg">7. Resting Electrocardiographic Results:</label>
+          <span class="description">(restecg)</span>
           <select id="restecg" name="restecg" required>
-            <option value="0">Normal</option>
-            <option value="1">Having ST-T wave abnormality</option>
-            <option value="2">
-              Showing probable or definite left ventricular hypertrophy
-            </option>
+            <option value="0">0 = Normal</option>
+            <option value="1">1 = Having ST-T wave abnormality</option>
+            <option value="2">2 = Showing probable or definite left ventricular hypertrophy</option>
           </select>
 
-          <label for="thalach">Maximum Heart Rate Achieved:</label>
+          <label for="thalach">8. Maximum Heart Rate Achieved:</label>
+          <span class="description">(thalach)</span>
           <input type="number" id="thalach" name="thalach" required />
 
-          <label for="exang">Exercise Induced Angina:</label>
+          <label for="exang">9. Exercise Induced Angina:</label>
+          <span class="description">(exang) 1 = yes; 0 = no</span>
           <select id="exang" name="exang" required>
-            <option value="1">Yes</option>
-            <option value="0">No</option>
+            <option value="1">1 = Yes</option>
+            <option value="0">0 = No</option>
           </select>
 
-          <label for="oldpeak"
-            >ST Depression Induced by Exercise Relative to Rest:</label
-          >
-          <input
-            type="number"
-            id="oldpeak"
-            name="oldpeak"
-            step="0.1"
-            required
-          />
+          <label for="oldpeak">10. ST Depression Induced by Exercise Relative to Rest:</label>
+          <span class="description">(oldpeak)</span>
+          <input type="number" id="oldpeak" name="oldpeak" step="0.1" required />
 
-          <label for="slope">The Slope of the Peak Exercise ST Segment:</label>
+          <label for="slope">11. The Slope of the Peak Exercise ST Segment:</label>
+          <span class="description">(slope)</span>
           <select id="slope" name="slope" required>
-            <option value="0">Upsloping</option>
-            <option value="1">Flat</option>
-            <option value="2">Downsloping</option>
+            <option value="0">0 = Upsloping</option>
+            <option value="1">1 = Flat</option>
+            <option value="2">2 = Downsloping</option>
           </select>
 
-          <label for="ca"
-            >Number of Major Vessels Colored by Fluoroscopy (0-3):</label
-          >
-          <input type="number" id="ca" name="ca" min="0" max="3" required />
+          <label for="ca">12. Number of Major Vessels Colored by Fluoroscopy (0-3):</label>
+          <span class="description">(ca)</span>
+          <select id="ca" name="ca" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
 
-          <label for="thal">Thalassemia:</label>
+          <label for="thal">13. Thalassemia:</label>
+          <span class="description">(thal) 0 = Normal; 1 = Fixed Defect; 2 = Reversible Defect</span>
           <select id="thal" name="thal" required>
-            <option value="0">Normal</option>
-            <option value="1">Fixed Defect</option>
-            <option value="2">Reversible Defect</option>
+            <option value="0">0 = Normal</option>
+            <option value="1">1 = Fixed Defect</option>
+            <option value="2">2 = Reversible Defect</option>
           </select>
 
           <button type="button" onclick="submitForm()">Submit</button>
