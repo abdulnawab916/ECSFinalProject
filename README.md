@@ -20,7 +20,7 @@ Final project repo for ECS 171 Machine Learning Class.
 - FIXED EVERYTHING
 
 ## Exploring Data Analysis
-``EDA.ipynv`` - Compares bagged decision tree, and logistic regression
+``EDA.ipynb`` - Compares bagged decision tree, and logistic regression
 
 ## HOW TO RUN THE APP:
 1) Open the ``flask`` folder in terminal.
